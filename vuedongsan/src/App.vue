@@ -13,8 +13,9 @@
     <a v-for="(a,i) in 메뉴들" :key="i">{{i}}</a>
   </div>
   
+  <!-- 강의3 숙제 : 아래 products 들을 반복문을 통해 그리기 -->
   
-  <div>
+  <!-- <div>
     <h4>{{products[0]}}</h4>
     <p>70만원</p>
   </div>
@@ -25,7 +26,15 @@
   <div>
     <h4>{{products[2]}}</h4>
     <p>50 만원</p>
+  </div> -->
+
+  <div v-for="(a) in products" :key="a">
+    <h4>{{a}}</h4>
+    <p>70만원</p>
   </div>
+
+
+
 </template>
 
 <script>
@@ -38,6 +47,18 @@ export default {
     return{
       메뉴들 : ['Home','Shop', 'About'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+
+      tests : {
+        product1 : {
+          name : '역삼', price : 50
+        },
+        product2 : {
+          name : '천호', price : 60
+        },
+        product3 : {
+          name : '마포', price : 70
+        }
+      }
     }
   },
   components: {

@@ -109,8 +109,14 @@ array/object 집어넣기 기능
     - 반복문 쓸 때 꼭 써야함
     - 반복문 돌린 요소를 컴퓨터가 구분하기 위해 씀
 
+# 반복문 소스코드
+  <div class="menu">
+    <a v-for="a in 메뉴들" :key="a">{{a}}</a>
+    <a v-for="(a,i) in 메뉴들" :key="i">{{a}}</a>
+    <a v-for="(a,i) in 메뉴들" :key="i">{{i}}</a>
+  </div>
 
-
+# v-for의 속성을 살펴보면 a는 item, i 는 index에 속함.
 
 
 
