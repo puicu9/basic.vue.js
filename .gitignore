@@ -1,0 +1,47 @@
+# VSCode settings directory
+.vscode/
+
+# VSCode workspace file
+*.code-workspace
+
+# VSCode extensions
+.vscode/extensions/
+
+# VSCode user snippets
+.vscode/*.code-snippets
+
+# VSCode history and backup files
+.history/
+.vscode/settings.json
+
+# VSCode language-specific settings
+.vscode/cpp_settings.json
+.vscode/jsconfig.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# VSCode workspace storage
+.vscode/workspaceStorage/
+
+# VSCode server working directory
+.vscode-server/
+
+# Log files from VSCode (Remote)
+.vscode-server*/.log
+
+# VSCode test logs
+*.testlog
+
+
+# Created by https://www.toptal.com/developers/gitignore/api/vuejs
+# Edit at https://www.toptal.com/developers/gitignore?templates=vuejs
+
+### Vuejs ###
+# Recommended template: Node.gitignore
+
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# End of https://www.toptal.com/developers/gitignore/api/vuejs
