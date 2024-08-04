@@ -1,0 +1,43 @@
+<template>
+  <img alt="Vue logo" src="./assets/logo.png">
+  <div>
+    <!-- {{logo}} : 자주 바뀌지 않을 데이터(자동 렌더링 불필요)라면 데이터바인딩 사용하지 않아도 될듯-->
+    <h4 class="red" :style="스타일">XX 원룸</h4> <!-- 속성에 렌더링 값 부여할 경우 속성 앞에 :(콜론) 을 붙일것 -->
+    <p>{{ price1 }} 만원</p>
+  </div>
+  <div>
+    <h4>XX 원룸</h4>
+    <p>{{ price2 }} 만원</p>
+  </div>
+</template>
+
+<script>
+
+
+
+export default {
+  name: 'App',
+  data(){// 데이터 보관함 : 변수 값 할당 등
+    return{
+      price1 : 80,
+      price2 : 70,
+      logo : '원룸샵',
+      스타일 : 'color : blue',
+    }
+  },
+  components: {
+    
+  }
+}
+</script>
+
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+</style>
