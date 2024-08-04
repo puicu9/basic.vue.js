@@ -1,19 +1,5 @@
 <template>
-
-  <!-- <div class="menu">
-    <a>Home</a>
-    <a>Products</a>
-    <a>About</a>
-    <a>About</a>
-  </div> -->
-
-  <div class="menu">
-    <a v-for="a in 메뉴들" :key="a">{{a}}</a>
-    <a v-for="(a,i) in 메뉴들" :key="i">{{a}}</a>
-    <a v-for="(a,i) in 메뉴들" :key="i">{{i}}</a>
-  </div>
-  
-  
+  <img alt="Vue logo" src="./assets/logo.png">
   <div>
     <h4>{{products[0]}}</h4>
     <p>70만원</p>
@@ -36,7 +22,6 @@ export default {
   name: 'App',
   data(){// 데이터 보관함 : 변수 값 할당 등
     return{
-      메뉴들 : ['Home','Shop', 'About'],
       products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
     }
   },
@@ -53,17 +38,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  margin-top: 60px;
 }
-
-.menu {
-  background: darkslateblue;
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.menu a {
-  color: white;
-  padding: 10px;
-}
-
 </style>
