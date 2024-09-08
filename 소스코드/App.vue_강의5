@@ -1,0 +1,157 @@
+<template>
+
+ <!-- S : 모달창  -->
+  <div class="black-bg" v-if="모달창열렸니 == true">
+    <div class="white-bg">
+      <h4>상세페이지</h4>
+      <p>상세페이지 내용</p>
+      <button @click="close()">닫기</button>
+    </div>
+  </div>
+<!-- E : 모달창  -->
+
+  <div class="menu">
+    <a v-for="a in 메뉴들" :key="a">{{a}}</a>
+  </div>
+
+
+  
+  <!-- 강의3 숙제 : 아래 products 들을 반복문을 통해 그리기 -->
+  
+  <h1>방법1</h1>
+  <div class="container">
+    <div>
+      <img src="./assets/room0.jpg" class="room-img">
+      <h4 @click="모달창열렸니 = true">{{products[0]}}</h4>
+      <p>70만원</p>
+          <!-- 클릭할 때 -->
+      <!-- <button v-on:click="자바스크립트~~">허위매물신고</button><span>신고수 : 0</span> -->
+      <!-- <button @click="신고수++">허위매물신고</button><span>신고수 : {{신고수}}</span> -->
+      <button @click="increase(0)">허위매물신고</button><span>신고수 : {{신고수[0]}}</span>
+      <!-- 마우스 hover일 때 -->
+      <!-- <button @mouseover="신고수++">허위매물신고</button><span>신고수 : {{신고수}}</span> -->
+    </div>
+    <div>
+      <img src="./assets/room1.jpg">
+      <h4>{{products[1]}}</h4>
+      <p>60 만원</p>
+      <button @click="increase(1)">허위매물신고</button><span>신고수 : {{신고수[1]}}</span>
+    </div>
+    <div>
+      <img src="./assets/room2.jpg">
+      <h4>{{products[2]}}</h4>
+      <p>50 만원</p>
+      <button @click="increase(2)">허위매물신고</button><span>신고수 : {{신고수[2]}}</span>
+    </div>
+  </div>
+
+  <!-- <h1>방법2</h1>
+  <div class="container">
+    <div v-for="(a, index) in tests" :key="index">
+      <h4>{{a.name}}</h4>
+      <p>{{a.price}}</p>
+      <button @click="increase_test(a)">허위매물신고</button><span>신고수 : {{a.count}}</span>
+    </div>
+  </div> -->
+
+</template>
+
+<script>
+
+
+
+export default {
+  name: 'App',
+  data(){// 데이터 보관함 : 변수 값 할당 등
+    return{
+      //강의5 : 모달창
+      모달창열렸니: false,
+
+
+      메뉴들 : ['Home','Shop', 'About'],
+      products : ['역삼동원룸', '천호동원룸', '마포구원룸'],
+      신고수 : [0,0,0],
+      tests : [
+        {name : '역삼', price : 50, count : 0},
+        {name : '천호', price : 60, count : 0},
+        {name : '마포', price : 70, count : 0}
+      ]
+    }
+  }
+  ,
+    // 함수 만드는 공간
+  methods: {
+    increase(index){
+      this.신고수[index] +=1;
+    }
+    ,increase_test(obj){
+      obj.count +=1;
+    }
+    ,close(){
+      this.모달창열렸니= false
+    }
+  },components: {
+  
+  }
+  
+}
+</script>
+
+
+<style>
+
+/* S : 모달창 */
+body{
+  margin :0
+}
+div{
+  box-sizing :border-box;
+}
+.black-bg{
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  position :fixed; padding: 20px;
+}
+.white-bg{
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+}
+/* E : 모달창 */
+
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.menu {
+  background: darkslateblue;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.menu a {
+  color: white;
+  padding: 10px;
+}
+
+.room-img{
+  width:100%;
+  margin-top: 40px;
+}
+
+
+
+/* .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+} */
+
+</style>

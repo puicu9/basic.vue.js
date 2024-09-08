@@ -1,18 +1,31 @@
 <template>
 
  <!-- S : 모달창  -->
-  <modalComponent :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" />
-  <!-- E : 모달창  -->
+  <div class="black-bg" v-if="모달창열렸니 == true">
+    <div class="white-bg">
+      <h4>상세페이지</h4>
+      <p>상세페이지 내용</p>
+      <button @click="close()">닫기</button>
+    </div>
+  </div>
+<!-- E : 모달창  -->
 
   <div class="menu">
     <a v-for="a in 메뉴들" :key="a">{{a}}</a>
   </div>
 
-  <discountComponent/>
+  <!-- <div>
+    <img :src="원룸들[0].image" class="room-img">
+    <h4>{{원룸들[0].title}}</h4>
+    <p>{{원룸들[0].price}}원</p>
+  </div> -->
 
-  <cardComponent :원룸들="원룸들" :누른거="누른거" :모달창열렸니="모달창열렸니" />
-  
-
+<!-- 강의6 숙제 -->
+  <div v-for="(a, index) in 원룸들" :key="index">
+    <img :src="a.image" class="room-img">
+    <h4>{{a.title}}</h4>
+    <p>{{a.price}}원</p>
+  </div>
 
 </template>
 
@@ -20,17 +33,11 @@
 
 // 다른 경로로 부터 import하기
 import data from './oneroom.js';
-import discount from './Discount.vue';
-import modal from './Modal.vue';
-import card from './Card.vue';
 
 export default {
   name: 'App',
   data(){// 데이터 보관함 : 변수 값 할당 등
     return{
-      //강의7
-      누른거 : 0,
-
       //강의6
       원룸들 : data,
 
@@ -60,9 +67,7 @@ export default {
       this.모달창열렸니= false
     }
   },components: {
-    discountComponent : discount,
-    modalComponent : modal,
-    cardComponent : card,
+  
   }
   
 }
@@ -78,7 +83,6 @@ body{
 div{
   box-sizing :border-box;
 }
-
 .black-bg{
   width: 100%; height: 100%;
   background: rgba(0,0,0,0.5);
